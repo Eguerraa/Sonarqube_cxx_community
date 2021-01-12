@@ -131,6 +131,9 @@ COPY sonar-cxx-plugin-1.3.2.1853.jar /opt/sonarqube/extensions/plugins/
 
 COPY --chown=sonarqube:sonarqube run.sh sonar.sh ${SONARQUBE_HOME}/bin/ 
 
+RUN chmod +x ${SONARQUBE_HOME}/bin/run.sh
+RUN chmod +x ${SONARQUBE_HOME}/bin/sonar.sh
+
 WORKDIR ${SONARQUBE_HOME}
 EXPOSE 9000
 ENTRYPOINT ["bin/run.sh"]
