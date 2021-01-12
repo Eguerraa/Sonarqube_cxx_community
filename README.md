@@ -1,1 +1,1 @@
-ï»¿# Sonarqube With c++ community plugin
+ÿþ
