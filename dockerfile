@@ -127,7 +127,9 @@ RUN set -ex \
     && chmod -R 777 "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}" \
     && apk del --purge build-dependencies
 
-COPY --chown=sonarqube:sonarqube run.sh sonar.sh ${SONARQUBE_HOME}/bin/
+COPY sonar-cxx-plugin-1.3.2.1853.jar /opt/sonarqube/extensions/plugins/
+
+COPY --chown=sonarqube:sonarqube run.sh sonar.sh ${SONARQUBE_HOME}/bin/ 
 
 WORKDIR ${SONARQUBE_HOME}
 EXPOSE 9000
