@@ -43,7 +43,6 @@ RUN mkdir -p /opt/sonarqube/bin/pid
 RUN chmod 777 /opt/sonarqube/bin/pid
 RUN cd /opt/sonarqube/bin/pid
 RUN chmod 777 /opt/sonarqube/logs
-RUN chmod 777 /opt/sonarqube/bin/linux-x86-64
 RUN ln -s /opt/java/bin/java /usr/bin/java
 RUN chmod 777 /opt/sonarqube/temp
 RUN chmod 777 /opt/sonarqube/data
