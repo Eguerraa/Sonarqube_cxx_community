@@ -48,7 +48,6 @@ RUN chmod 777 /opt/sonarqube/temp
 RUN chmod 777 /opt/sonarqube/data
 RUN chmod 777 /opt/sonarqube/extensions
 RUN chmod 777 /opt/sonarqube/extensions/plugins/
-RUN chmod 777 /opt/sonarqube/lib/bundled-plugins
 
 VOLUME "$SONARQUBE_HOME/data"
 
