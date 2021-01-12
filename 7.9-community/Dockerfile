@@ -39,6 +39,18 @@ RUN set -x \
     && rm sonarqube.zip* \
     && rm -rf $SONARQUBE_HOME/bin/*
 
+RUN mkdir -p /opt/sonarqube/bin/pid
+RUN chmod 777 /opt/sonarqube/bin/pid
+RUN cd /opt/sonarqube/bin/pid
+RUN chmod 777 /opt/sonarqube/logs
+RUN chmod 777 /opt/sonarqube/bin/linux-x86-64
+RUN ln -s /opt/java/bin/java /usr/bin/java
+RUN chmod 777 /opt/sonarqube/temp
+RUN chmod 777 /opt/sonarqube/data
+RUN chmod 777 /opt/sonarqube/extensions
+RUN chmod 777 /opt/sonarqube/extensions/plugins/
+RUN chmod 777 /opt/sonarqube/lib/bundled-plugins
+
 VOLUME "$SONARQUBE_HOME/data"
 
 WORKDIR $SONARQUBE_HOME
